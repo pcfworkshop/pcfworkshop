@@ -1,0 +1,141 @@
+html {
+	height: 100%;
+	display: flex;
+	background: #ddd;
+  }
+  
+  body {
+	background-image: linear-gradient(
+	  102.7deg,
+	  rgba(253, 218, 255, 1) 8.2%,
+	  rgba(223, 173, 252, 1) 19.6%,
+	  rgba(173, 205, 252, 1) 36.8%,
+	  rgba(173, 252, 244, 1) 73.2%,
+	  rgba(202, 248, 208, 1) 90.9%
+	);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	margin: auto;
+	font-family: sans-serif;
+  }
+  
+  .todo-list {
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	font-size: 20px;
+	max-width:90vw;
+	min-width:360px;
+	max-height: 90vw;
+    overflow-y: auto;
+	border-radius: 16px;
+	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .todo-item {
+	display: flex;
+	align-items: center;
+	padding: 1em;
+	border-bottom: solid 1px #ddd;
+  
+	&:last-child {
+	  border-bottom: none;
+	}
+  
+	&.completed {
+	  background-color: rgba(74, 206, 163, 0.1);
+	}
+  
+	& label {
+	  font-size: 24px;
+	  position: relative;
+	  padding-left: 8px;
+	}
+  }
+  
+  input[type="checkbox"] {
+	appearance: none;
+	border: 4px solid #cfcfcf;
+	border-radius: 4px;
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	flex-shrink: 0;
+  
+	&:hover {
+	  box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%),
+		0 4px 6px 0 rgb(93 100 148 / 20%);
+	}
+	&:focus {
+	  outline: #bdcdd6 1px solid;
+	}
+  
+	&:checked {
+	  border-color: #38bb90;
+	  transition: border-color 0.2s ease-in-out;
+	}
+  
+	&:checked ~ label {
+	  text-decoration: line-through;
+	}
+  
+	&:checked ~ label::before {
+	  content: "\2713";
+	  font-weight: 900;
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  left: -28px;
+	  width: 16px;
+	  color: #4acea3;
+	}
+  }
+  
+  .new-task {
+	display: flex;
+	flex-shrink: 0;
+	height: 38px;
+	gap: 16px;
+	margin: 16px 16px 0px 16px;
+	& input[type="text"] {
+	  flex: 1;
+	  outline: 0;
+	  width: auto;
+	  font-size: 18px;
+	  border: 0;
+	  color: #455963;
+	  box-shadow: 0 -1px 0 #e2e4ea inset;
+	  &::placeholder {
+		color: #a8b5bb;
+	  }
+  
+	  &:focus {
+		box-shadow: 0 -2px 0 #bdcdd6 inset;
+	  }
+	}
+  
+	& button {
+	  outline: 0;
+	  border: 0;
+	  cursor: pointer;
+	  font-weight: 600;
+	  font-size: 16px;
+	  color: rgb(72, 76, 122);
+	  border-radius: 8px;
+	  background-image: linear-gradient(180deg, #fff, #f5f5fa);
+	  box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%),
+		0 1px 3px 0 rgb(93 100 148 / 20%);
+  
+	  &:focus {
+		outline: #bdcdd6 1px solid;
+	  }
+  
+	  &:hover {
+		box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%),
+		  0 4px 6px 0 rgb(93 100 148 / 20%);
+	  }
+	}
+  }

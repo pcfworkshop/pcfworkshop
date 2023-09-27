@@ -1,0 +1,72 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:sonarjs/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "globals": {
+    "ComponentFramework": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-plugin-prettier",
+    "eslint-plugin-promise",
+    "sonarjs"
+  ],
+  "ignorePatterns": [
+    "**/generated/*.ts"
+  ],
+  "rules": {
+    "eqeqeq": [
+      2,
+      "smart"
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "singleQuote": true,
+        "printWidth": 120,
+        "tabWidth": 4,
+        "trailingComma": "all"
+      }
+    ],
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "rules": {
+        "camelcase": [
+          2,
+          {
+            "properties": "never"
+          }
+        ]
+      }
+    }
+  ]
+}
