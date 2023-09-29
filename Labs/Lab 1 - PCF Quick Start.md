@@ -36,7 +36,7 @@ It's always good to have a separate browser profile for your work and for worksh
 
    > [!IMPORTANT]
    >Select **Set up new work profile** not **Set up new personal profile**
-   
+
 1. Click **Add**.
 
    This will then open up a new browser window on your taskbar.
@@ -49,8 +49,11 @@ It's always good to have a separate browser profile for your work and for worksh
 
    > [!NOTE]
    >All the screenshots in these labs are using Dark mode.
-   
+
 1. Select **Finish**.
+
+> [!IMPORTANT]
+> Re-open these labs inside the new browser profile window so that any links will open in the correct profile.
 
 ## ✅Task 2: Log in to Power Apps
 
@@ -77,25 +80,25 @@ With the credentials that have been provided to you, log into the account you ar
 
 For this workshop, you will need a Dataverse environment. You can create up to 3 of these for free. Developer environments will be deleted after a period of inactivity.
 
+### 👉Create environment by subscribing to the developer plan
+
+You are required to subscribe to the Power Apps Developer Plan to create developer environments that gives you access to all of the Power Platform resources for development purposes. 
+
 To create developer environments, you can create them in multiple ways:
 
 1. Subscribing to the Power Apps Developer Plan.
 1. Using the Power Platform Admin Center (PPAC)
 1. Using the Power Platform CLI
 
-> [!IMPORTANT]
-> When subscribing to the developer plan, you will automatically assign a developer license to yourself. When creating a developer environment through PPAC or the CLI, it will not do that. In this workshop, we will create an environment by subscribing to the Power Apps Developer Plan.
-
-### 👉Create environment by subscribing to the developer plan
-
-You are required to subscribe to the Power Apps Developer Plan to create developer environments that gives you access to all of the Power Platform resources for development purposes.
+In this workshop we will use option 1 because it will automatically assign a developer license to yourself, where as the other options do not.
 
 1. Go to the [Power Apps Developer Plan](https://aka.ms/pp/devplan) page (use the Edge profile you created for this workshop).
 
 1. Select the **Existing user? Add a dev environment** button:  
    ![image-20230918162814564](Lab%201%20-%20PCF%20Quick%20Start.assets/image-20230918162814564.png)
    
-1. Select the **Sign up for a Community Plan** link.  
+1. Select the **Sign up for a Community Plan** link. 
+   **IMPORTANT:** If you do not see the following page, ensure that you have opened the page in your workshop browser profile.  
    ![image-20230918162857761](Lab%201%20-%20PCF%20Quick%20Start.assets/image-20230918162857761.png)
    
 1. Leave the country as United States and select the **Accept** button.  
@@ -232,11 +235,15 @@ The Power Platform CLI allows us to perform many operations on the Power Platfor
 12. The Code space terminal should show the message **Authentication profile created** showing the workshop user you were provided.  
     ![image-20230918165614148](Lab%201%20-%20PCF%20Quick%20Start.assets/image-20230918165614148.png)
 
-13. At the terminal type `pac auth list`. You will see the new auth profile with an asterisk next to it indicating that it is the currently selected profile. The profiles is created as **UNIVERSAL** meaning that it is not specific to any specific environment.  
+13. At the terminal type `pac auth list`. You will see the new auth profile with an asterisk (*) next to it indicating that it is the currently selected profile. The profiles is created as **UNIVERSAL** meaning that it is not specific to any specific environment.  
     ![image-20230918165718962](Lab%201%20-%20PCF%20Quick%20Start.assets/image-20230918165718962.png)
 
-14. To select our developer environment, expand the Power Platform left panel. If you do not see the **UNIVERSAL** profile, hover over the AUTH PROFILES area and select **Refresh**.  
-    <img src="Lab%201%20-%20PCF%20Quick%20Start.assets/image-20230911160737771.png" alt="image-20230911160737771" width="33%" />
+14. To select our developer environment, expand the Power Platform left panel. If you do not see the **UNIVERSAL** profile, hover over the AUTH PROFILES area and select **Refresh**.
+    
+    > [!IMPORTANT]
+    > If you do not see the power platform extension logo as in the screenshot below, press `Ctrl + Shift + P`, and then type `Developer: Reload Window` and press `ENTER`.
+    
+      <img src="Lab%201%20-%20PCF%20Quick%20Start.assets/image-20230911160737771.png" alt="image-20230911160737771" width="33%" />
 
 15. To select our developer environment, use the Star icon **Select Environment**. The Environment then should have a filled star next to it.  
     <img src="Lab%201%20-%20PCF%20Quick%20Start.assets/image-20230911160827182.png" alt="image-20230911160827182" width="33%" />
@@ -245,7 +252,7 @@ The Power Platform CLI allows us to perform many operations on the Power Platfor
     ![image-20230908131802767](Lab%201%20-%20PCF%20Quick%20Start.assets/image-20230908131802767.png)
 
     > [!NOTE]
-    > You can change also select an environment if you create multiple ones for different environments by using
+    > You can also select an environment by using
     >  `pac org select --envrionment <URL/ID/Unique Name/Partial Name>`
 
 17. To ensure that you are connected to the correct environment, at the terminal type `pac org who`
