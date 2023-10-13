@@ -500,7 +500,7 @@ To create a unique key, we can install a library that will generate one for us.
    > 1. The props are defined in the same way that we did for the `TodoItem` component and are passed in from the parent component when it is used.
    > 2. `useState` is again used to create the state that holds the name of the new item. The input element has the value attribute set to the name state value, so that when it changes, the text input is re-rendered, and the value will change in the output DOM. There is an `onChange` call-back that updates the name state (using `setName` returned from `useState`) every time the user types a value into the input element. This is called a 'controlled component' rather than an 'uncontrolled' component. Read more: [Uncontrolled Components](https://reactjs.org/docs/uncontrolled-components.html). 
 
-5. Notice the button `onClick` event calls the `onAddNew` prop - this must be passed down by the parent component. Update the `Todos.tsx` component to include the following after the `<div>` and before the `todos.map()`:
+5. Notice the button `onClick` event calls the `addNew` prop - this must be passed down by the parent component. Update the `Todos.tsx` component to include the following after the `<div>` and before the `todos.map()`:
 
    ```react
    <AddNewTodo addNew={addTodo} />
