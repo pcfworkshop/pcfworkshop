@@ -645,6 +645,7 @@ Only perform this step if you are already comfortable with VSCode and writing Ty
          2,
          "smart"
        ],
+       "@typescript-eslint/no-unused-vars": "warn",
        "prettier/prettier": [
          "error",
          {
